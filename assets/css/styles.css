@@ -1,0 +1,332 @@
+/*General Styles*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font: normal 16px Roboto;
+  color: #555;
+}
+
+nav {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  opacity: .9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+a.btn {
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+section {
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 10%;
+}
+
+section.header-graph, .chart-container {
+  font-size: 2rem;
+  padding: 15px;
+}
+
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+hr {
+  width: 250px;
+  height: 3px;
+  background-color: #3f51b5;
+  border: 0;
+  margin-bottom: 50px;
+}
+
+section h3.title, h3.title {
+  font: bold 'Roboto-Regular', sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+section p {
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.info-container, .graph-tile {cursor: pointer;}
+
+.legend-container:hover {
+  opacity: 1;
+}
+.legend-container {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  float: left;
+  position: fixed;
+  background-color: rgb(255,255,255,0.4);
+  /* margin-top: 40px; */
+  opacity: 0.3;
+}
+.legend-container a {
+  width: 200px;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 5px;
+  background-color: rgb(224, 224, 224);
+}
+.legend-container ul li, .legend-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px;
+    font-size: 1.2em;
+    height: 45px;
+    font-weight: bold;
+}
+.excellent, .good, .poor {color: #fff;height: 30px;width: 150px;}
+
+.excellent {background-color: rgb(111, 213, 152);}
+.good {background-color: rgb(249, 211, 80);}
+.legend-container .poor {background-color: rgb(237, 104, 99);}
+
+@media (max-width: 800px) {
+  section {
+    padding: 50px 20px;
+  }
+}
+
+
+/* Header Styles */
+.nav-link {
+  color: #fff;
+}
+.menu-bar {
+  background-color: #373f51;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.menu-bar ul {
+  display: flex;
+}
+
+.menu-bar > div, .menu-bar > div > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-bar nav li, .menu-bar ul li  {
+  margin: 10px 10px;
+}
+
+
+
+/* Dashboard Styles */
+.dashboard-header {
+  height: 120%;
+  justify-content: space-evenly;
+  z-index: 2;
+}
+.dashboard-header .title {
+  font-size: 2.5rem;
+}
+.dashboard-header form {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.dashboard-header form div {
+  align-self: flex-end;
+  margin-top:  15px;
+}
+
+.dashboard-header form input, .calc-form input {
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+.calc-form input[type="number"] {
+  width: 40%;
+}
+
+.dashboard-header .graph-ctas input {width:70px;}
+.dashboard-header span.valuePadding input {width:80% !important;}
+
+.dashboard-header form input[type="submit"], .calc-form input[type="submit"] {
+  background-color: #73b566;
+  color: white;
+  font-weight: bold;
+}
+.dashboard-header form .col-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+/* Case Pipeline Styles */
+#casePipeline {
+  height: 200px;
+  width: 100%;
+}
+
+
+/*  Dashboard Grid Layout*/
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 33.3% 15.15% 15.15% 30.33%;
+  grid-template-rows: 400px 400px 500px 400px 400px 400px;
+  grid-gap: 10px;
+}
+
+.want-ratio {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+.conversion-rate {
+  grid-column: 3 / 5;
+  grid-row: 1;
+}
+.cost-per-case {
+  grid-column: 1;
+  grid-row: 2;
+}
+.cost-per-signed {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+
+.avg-fee-per-case {
+  grid-row: 2;
+}
+
+
+
+.case-type-breakdown {
+  grid-column: 1 / 5;
+  grid-row: 3;
+}
+
+.avg-age-active-classes {
+  grid-column:  1;
+  grid-row: 5;
+}
+
+.drop-rate {
+  grid-column: 2/4;
+  grid-row: 5;
+}
+
+.referral-rate {
+  /* grid-column: ; */
+  grid-row: 5;
+}
+
+.time-on-desk-settled {
+  grid-column: 1/3;
+  grid-row: 4;
+}
+
+.time-on-desk-dropped {
+  grid-column: 3/5;
+  grid-row: 4;
+}
+
+.roi-to-date {
+  grid-column: 1 / span 2;
+  grid-row: 6;
+}
+
+.anticipated-roi-calc {
+  grid-column: 3 / span 2;
+  grid-row: 6;
+}
+
+/* Chart COntainer  */
+.chart-container {
+  /* background-color: #f2f2f2; */
+  text-align: center;
+}
+
+/* Dashboard Styles  */
+.dashboard-container > div, .dashboard-container > div .info-container{
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* min-height: 300px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+
+.yellow-bar {
+  height: 25px;
+  background-color: #f9d350;
+  margin-bottom: 10px;
+}
+
+.green-bar {
+  background-color: #6fd598;
+  height: 25px;
+  margin-bottom: 10px;
+}
+.red-bar {
+  background-color: #ed6863;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.chart-box:hover {
+  cursor: pointer;
+  background-color: rgba(242,242,242,1);
+}
+.chart-box {
+  height: 80%;
+  margin: 0 auto;
+  background-color: rgba(242,242,242,.5);
+  padding: 25px;
+}
+.dashboard-container > div > h3, .dashboard-container > div > .info-container h3 {font-size: 2rem; font-weight: normal;}
+.dashboard-container > div h1 {font-size: 3rem;}
+.dashboard-container .fraction {font-size: 1rem;margin: 15px 20px;}
+.dashboard-container .desc-container {display: flex;justify-content: space-evenly;margin: 15px 20px;font-size: 1.6rem; font-weight: bold;}
+.dashboard-container .roi-to-date .desc-container {font-size: 3rem;}
+.dashboard-container p.desc {font-size: 1.1rem; margin: 15px 20px;font-weight:bold;}
+.dashboard-container a {font-size: 1.2rem; color:  rgb(47, 128, 237);margin: 15px 0px;}
+.dashboard-container .anticipated-roi-calc {justify-content: space-around;}
